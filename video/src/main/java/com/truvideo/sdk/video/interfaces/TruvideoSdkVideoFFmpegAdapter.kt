@@ -1,0 +1,30 @@
+package com.truvideo.sdk.video.interfaces
+
+import com.truvideo.sdk.video.model.TruvideoSdkVideoInformation
+
+interface TruvideoSdkVideoFFmpegAdapter {
+    fun executeAsync(
+        command: String,
+        callback: (id: Long, code: Int, output: String) -> Unit
+    ): Long
+
+    fun executeArrayAsync(
+        command: Array<String>,
+        callback: (id: Long, code: Int, output: String) -> Unit
+    ): Long
+
+    suspend fun execute(command: String): ExecutionResult
+
+    suspend fun executeArray(command: Array<String>): ExecutionResult
+
+    fun cancel(executionId: Long)
+
+    suspend fun getInformation(path: String): TruvideoSdkVideoInformation
+
+}
+
+data class ExecutionResult(
+    val id: Long,
+    val code: Int,
+    val output: String
+)
