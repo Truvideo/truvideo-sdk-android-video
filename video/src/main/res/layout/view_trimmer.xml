@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2f3031"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/layout_surface_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/layout"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <VideoView
+            android:id="@+id/video_loader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+
+        <ImageView
+            android:id="@+id/icon_video_play"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/play_button" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/background_video_color">
+
+        <RelativeLayout
+            android:id="@+id/timeFrame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/rounded_textview_video_trim"
+            android:gravity="center_horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/textTimeSelection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:gravity="center"
+                android:paddingStart="10dp"
+                android:paddingTop="3dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="3dp"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/text_small" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/timeLineFrame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/timeFrame"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/black"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+                <com.truvideo.sdk.video.trimming.view.TimeLineView
+                    android:id="@+id/timeLineView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </FrameLayout>
+
+            <SeekBar
+                android:id="@+id/handlerTop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="4dp"
+                android:max="1000"
+                android:progressDrawable="@android:color/transparent"
+                android:secondaryProgress="0"
+                android:thumb="@drawable/seek_line"
+                android:visibility="gone" />
+
+            <com.truvideo.sdk.video.trimming.view.RangeSeekBarView
+                android:id="@+id/timeLineBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="3dp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

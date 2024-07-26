@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--app dimens-->
+    <dimen name="app_title">15sp</dimen>
+    <dimen name="app_mini_title">13sp</dimen>
+    <dimen name="app_header">12sp</dimen>
+    <dimen name="app_content">11sp</dimen>
+
+    <!-- VIDEO TRIMMER-->
+    <dimen name="frames_video_height">40dip</dimen>
+    <dimen name="text_small">10sp</dimen>
+    <dimen name="cameraButtonWidth">100dp</dimen>
+</resources>
