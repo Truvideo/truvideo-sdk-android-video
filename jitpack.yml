@@ -1,4 +1,2 @@
-install:
-  - FILE="-Dfile=video.aar"
-  - mvn install:install-file $FILE -DgroupId=com.truvideo.sdk -DartifactId=video -Dversion=70.1.1-beta.33 -Dpackaging=aar -DgeneratePom=true
-
+jdk:
+  - openjdk17
